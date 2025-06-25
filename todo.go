@@ -73,7 +73,18 @@ func ListTasks() {
 }
 
 func CompleteTask(id int) {
-	panic("unimplemented")
+	task, _ := loadTasks()
+    flag:=false
+    for i:=0;i<len(task);i++{
+        if task[i].ID==id{
+            task[i].Done = true
+            flag=true
+            break
+        }
+    }  
+    if flag{
+       // panic("unimplemented")
+    }
 }
 
 func DeleteTask(id int) {
